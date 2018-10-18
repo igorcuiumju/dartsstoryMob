@@ -19,27 +19,188 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-content>
+            <section ng-hide="onsubmit" ng-controller="firstCtrl">
+              <div class="dartsScore">
+                  <div class="dartsScore_header">
+                    <h1 class="text-center">Darts Score</h1>
+                  </div>
+                  <div class="dartsScore_body">
+                    <div class="dartsScore_body__section">
+                      <div class="dartsScore_body__section_icon">
+                        <img src="img/multiple-users-silhouette.png" alt="">
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" ng-model="player1" placeholder="Player 1">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" ng-model="player2" placeholder="Player 2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dartsScore_body__section">
+                      <div class="dartsScore_body__section_icon">
+                        <img src="img/target.png" alt="">
+                      </div>
+                      <div class="dartsScore_body__section_game_select">
+                        <div class="form-group">
+                          <select ng-model="selectgame" ng-init="selectgame='101'" class="form-control">
+                            <option value="101">101</option>
+                            <option value="201">201</option>
+                            <option value="301">301</option>
+                            <option value="401">401</option>
+                            <option value="501">501</option>
+                            <option value="601">601</option>
+                            <option value="701">701</option>
+                            <option value="801">801</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dartsScore_body__section">
+                      <div class="dartsScore_body__section_icon">
+                        <h2>First to</h2>
+                      </div>
+                        <div class="dartsScore_body__section_game_select">
+                          <div class="form-group">
+                            <select ng-model="selectrounds" ng-init="selectrounds='1'" class="form-control">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="dartsScore_footer">
+                        <button ng-click="submit()" class="btn btn-primary">Start</button>
+                      </div>
+                  </div>
+              </div>
+            </section>
+
+            <section ng-show="onsubmit" class="dartsScore" ng-controller="secondCtrl">
+              <div class="dartsScore_header">
+                <h1 class="text-center">Darts Score</h1>
+              </div>
+              <div ng-show="gamesettings">
+                <div class="dartsScore_secondPage">
+                  <div class="player_score first_player_score " ng-class="firstPlayer" >
+                    <div class="wins">
+                      <p>Wins: {{ wins1 }}</p>
+                    </div>
+                    <p>{{ myPlayer1 }}</p>
+                    <h2>{{ myPlayer1Score }}</h2>
+                  </div>
+                  <div class="player_score second_player_score" ng-class="secondPlayer">
+                    <div class="wins">
+                      <p>Wins: {{ wins2 }}</p>
+                    </div>
+                    <p>{{ myPlayer2 }}</p>
+                    <h2>{{ myPlayer2Score }}</h2>
+                  </div>
+                </div>
+
+                <div class="show_score">
+                  <p>{{number}}</p>
+                </div>
+
+                <div class="dartsScore_secondPage_keybord">
+                  <div class="row_flex">
+                    <div class="col-9">
+                      <div class="row">
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '1'">1</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '2'">2</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '3'">3</button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '4'">4</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '5'">5</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '6'">6</button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '7'">7</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '8'">8</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '9'">9</button>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col keybord_button">
+                          <button></button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="number = number + '0'">0</button>
+                        </div>
+                        <div class="col keybord_button">
+                          <button ng-click="goToMenu()" >MENU</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="row">
+                        <div class="col-12 keybord_button delete_button">
+                          <button ng-click="deleteNumber()"> <img src="img/delete.png" alt=""> </button>
+                        </div>
+                        <div class="col-12 keybord_button done_button">
+                          <button ng-click="claculateScore()"> <img src="img/checked-symbol.png" alt=""> </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+      </ion-content>
+    </ion-pane>
+
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="js/controllers/dartsscore.controller.js"></script>
     <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
   </body>
 </html>

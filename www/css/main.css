@@ -1,0 +1,172 @@
+.dartsScore {
+  max-width: 768px;
+  margin: 0 auto; }
+  .dartsScore .dartsScore_header {
+    padding: 3.5% 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #8A2BE2;
+    border-bottom: 2px solid #fff; }
+    .dartsScore .dartsScore_header h1 {
+      font-size: 1rem;
+      color: #fff;
+      margin: 0; }
+
+.dartsScore_body__section .row {
+  margin: 0;
+}
+
+.dartsScore_body__section {
+  padding: 3.26vh;
+  background-color: #311954;
+  border-bottom: 2px solid #fff; }
+  .dartsScore_body__section input, .dartsScore_body__section select {
+    background-color: #8A2BE2;
+    border: 0px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    text-align: center;
+    height: 50px;
+    -moz-text-align-last: center;
+         text-align-last: center;
+    font-weight: 500;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    -o-text-overflow: '';
+       text-overflow: '';
+    letter-spacing: 0.0625rem; }
+    .dartsScore_body__section input::-webkit-input-placeholder, .dartsScore_body__section select::-webkit-input-placeholder {
+      color: #fff; }
+    .dartsScore_body__section input::-moz-placeholder, .dartsScore_body__section select::-moz-placeholder {
+      color: #fff; }
+    .dartsScore_body__section input::-ms-input-placeholder, .dartsScore_body__section select::-ms-input-placeholder {
+      color: #fff; }
+    .dartsScore_body__section input::placeholder, .dartsScore_body__section select::placeholder {
+      color: #fff; }
+  .dartsScore_body__section .dartsScore_body__section_icon {
+    text-align: center; }
+    .dartsScore_body__section .dartsScore_body__section_icon img {
+      margin-bottom: 3%; }
+    .dartsScore_body__section .dartsScore_body__section_icon h2 {
+      margin-bottom: 3px;
+      color: #fff;
+      margin-bottom: 25px; }
+  .dartsScore_body__section .dartsScore_body__section_game_select {
+    padding: 0px 40%; }
+
+.dartsScore_footer button {
+  width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  font-weight: 500;
+  height: 70px;
+  background-color: #006400; }
+
+.dartsScore_secondPage .player_score {
+  position: relative;
+  text-align: center;
+  background-color: #311954;
+  padding: 3% 0px; }
+  .dartsScore_secondPage .player_score .wins {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 3%; }
+    .dartsScore_secondPage .player_score .wins p {
+      font-size: 0.875rem; }
+  .dartsScore_secondPage .player_score p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase; }
+  .dartsScore_secondPage .player_score h2 {
+    font-size: 3.23rem;
+    font-weight: 700;
+    color: #fff; }
+
+.dartsScore_secondPage .player_score_active {
+  opacity: 0.8; }
+
+.show_score {
+  background-color: #2F4F4F;
+  height: 60px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .show_score p {
+    margin: 0;
+    font-size: 2.1875rem;
+    font-weight: 500; }
+
+.dartsScore_secondPage_keybord {
+  border-left: 1px solid; }
+  .dartsScore_secondPage_keybord .keybord_button {
+    text-align: center;
+    padding-left: 0px !important;
+    padding-right: 0px !important; }
+    .dartsScore_secondPage_keybord .keybord_button button {
+      width: 100%;
+      height: 80px;
+      background-color: #2F4F4F;
+      border: 0.5px solid #304646;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 600; }
+  .dartsScore_secondPage_keybord .keybord_margin {
+    margin-left: 15px;
+    margin-right: -15px; }
+  .dartsScore_secondPage_keybord .delete_button button, .dartsScore_secondPage_keybord .done_button button {
+    height: 160px; }
+
+.row_flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.row_flex .col-9, .row_flex .col-3, .row_flex .col-3 .row, .row_flex .col-9 .row, .keybord_button {
+  padding: 0;
+  margin: 0;
+}
+
+
+.no_padding {
+  padding: 0px; }
+
+@media only screen and (max-width: 767px) {
+  .dartsScore {
+    margin: 0px;
+    width: 100%;
+    max-width: 100%; }
+  .dartsScore_secondPage_keybord .keybord_button button {
+    height: 50px; }
+  .dartsScore_secondPage_keybord .delete_button button,
+  .dartsScore_secondPage_keybord .done_button button {
+    height: 100px; } }
